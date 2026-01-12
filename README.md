@@ -23,7 +23,7 @@
 
 1.  **Search:** The app listens for the "Enter" key or the search button click.
 2.  **Fetch:** It sends an asynchronous request (`fetch`) to the dictionary API.
-3.  **Render:** * If successful, it injects the data (definitions, audio, synonyms) into the DOM.
+3.  **Render:** If successful, it injects the data (definitions, audio, synonyms) into the DOM.
     * It checks if the word exists in your `localStorage`; if yes, the heart icon turns red automatically.
 4.  **Save:** Clicking the heart icon updates the local storage array and saves the word for your next visit.
 
@@ -31,7 +31,7 @@
 
 1.  **Clone the repository** (or download the files):
     ```bash
-    git clone [https://github.com/penina26/wordly-dictionary-spait](https://github.com/penina26/wordly-dictionary-spa.git)
+    git clone https://github.com/penina26/wordly-dictionary-spa.git
     ```
 2.  **Open the project folder.**
 3.  **Launch:** Open `index.html` in any modern web browser (Chrome, Firefox, Edge).
@@ -47,7 +47,6 @@
 ## 📂 Project Structure
 
 ```text
-/
 ├── index.html      # Main HTML structure
 ├── style.css       # Styling, themes, and animations
 ├── script.js       # App logic, API fetching, and state management
