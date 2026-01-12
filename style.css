@@ -1,0 +1,279 @@
+/* 1. CSS VARIABLES (Default = Dark Mode) */
+:root {
+    --bg-main: #121212;
+    --bg-card: #1e1e1e;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --accent: #ae9cff;
+    --nav-bg: rgba(18, 18, 18, 0.9);
+    --border-color: #333;
+}
+
+/* 2. LIGHT THEME OVERRIDES (JS will toggle this class on Body) */
+.light-theme {
+    --bg-main: #f0f2f5;
+    --bg-card: #ffffff;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --accent: #6c5ce7;
+    /* Darker purple for light mode */
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --border-color: #ddd;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    /* Smooth Theme Transition */
+}
+
+body {
+    height: 100vh;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.highlight {
+    color: var(--accent);
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.icon-box {
+    cursor: pointer;
+}
+
+.icon-box svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--text-primary);
+}
+
+.icon-box svg:hover {
+    stroke: var(--accent);
+}
+
+/* MAIN CONTAINER */
+.container {
+    margin-top: 120px;
+    background-color: var(--bg-card);
+    width: 90vmin;
+    max-width: 600px;
+    padding: 50px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+/* SEARCH BOX */
+.search-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.search-box input {
+    padding: 10px;
+    width: 80%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px solid var(--text-secondary);
+    color: var(--text-primary);
+    font-size: 18px;
+}
+
+.search-box input:focus {
+    border-color: var(--accent);
+}
+
+.search-box button {
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.search-box button svg {
+    width: 20px;
+    height: 20px;
+    stroke: #fff;
+}
+
+/* RESULT AREA */
+.word-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result h3 {
+    font-size: 2.5rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* ACTION BUTTONS (Save & Volume) */
+.icon-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.icon-btn svg {
+    width: 30px;
+    height: 30px;
+    stroke: var(--accent);
+    transition: 0.2s;
+}
+
+.icon-btn:hover {
+    transform: scale(1.1);
+}
+
+/* SPECIFIC STYLE FOR SAVED HEART */
+.saved svg {
+    fill: #ff6b6b;
+    /* Fill with red */
+    stroke: #ff6b6b;
+    /* Red outline */
+}
+
+/* Volume hidden by default */
+.volume {
+    display: none;
+}
+
+.details {
+    display: flex;
+    gap: 15px;
+    color: var(--text-secondary);
+    margin: 5px 0 20px 0;
+    font-size: 14px;
+}
+
+.word-meaning {
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.word-example {
+    color: var(--text-secondary);
+    font-style: italic;
+    border-left: 4px solid var(--accent);
+    padding-left: 10px;
+    margin-top: 15px;
+}
+
+/* UTILS */
+.placeholder-text {
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+
+/* SAVED LIST STYLES */
+#saved-view h3 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--accent);
+}
+
+#saved-list {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+    /* Scroll if list is long */
+}
+
+.saved-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+    border: 1px solid transparent;
+}
+
+.saved-item:hover {
+    border-color: var(--accent);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.saved-word-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.delete-btn:hover {
+    color: #ff6b6b;
+}
+
+/* SYNONYMS STYLING */
+.synonyms {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.synonyms span {
+    color: var(--accent);
+    font-style: italic;
+    font-weight: 500;
+}
