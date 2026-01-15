@@ -14,8 +14,8 @@
 * **Error Handling:** Displays user-friendly messages for missing words or network errors.
 
 ### 🎨 Customization & UI
-* **Dark/Light Mode:** Toggle between a neon-dark theme and a clean light theme.
-* **Saved Words:** "Heart" a word to save it to your personal list (persists on refresh).
+* **Dark/Light Mode:** Toggle between a neon-dark theme and a clean light theme(toolitip included for instruction).
+* **Saved Words:** "Heart" a word to save it to your personal list (persists on refresh) (toolitip included for instruction).
 * **Responsive Design:** Fully responsive layout that works on mobile and desktop.
 * **Glassmorphism Navbar:** A sticky, modern navigation bar.
 
