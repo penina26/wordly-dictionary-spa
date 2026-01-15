@@ -1,4 +1,4 @@
-// SELECTORS 
+// Selectors
 const url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
 const inputWord = document.getElementById("inp-word");
@@ -25,11 +25,11 @@ const synonymsSection = document.getElementById("synonyms-section");
 const synonymsText = document.getElementById("synonyms-text");
 
 
-//  STATE MANAGEMENT
-// 1. Load saved words from browser storage (or create empty list)
+//  State management
+// Load saved words from browser storage (or create empty list)
 let savedWords = JSON.parse(localStorage.getItem('mySavedWords')) || [];
 
-// EVENT LISTENERS 
+// Event Listeners
 
 searchBtn.addEventListener("click", searchWord);
 inputWord.addEventListener("keydown", (e) => {
@@ -53,17 +53,17 @@ homeBtn.addEventListener('click', () => {
 listsBtn.addEventListener('click', showSavedList);
 
 
-//  SAVE BUTTON LOGIC
+//  save button logic
 saveBtn.addEventListener("click", () => {
     const currentWord = wordText.innerText;
 
     // Check if word is already saved
     if (savedWords.includes(currentWord)) {
-        // REMOVE IT
+        // Remove it
         savedWords = savedWords.filter(w => w !== currentWord);
         saveBtn.classList.remove("saved");
     } else {
-        // ADD IT
+        // add it
         savedWords.push(currentWord);
         saveBtn.classList.add("saved");
     }
@@ -73,7 +73,7 @@ saveBtn.addEventListener("click", () => {
 });
 
 
-// MAIN FUNCTIONS 
+// Main functions
 
 async function searchWord(query) {
     // Check if we passed a specific word (from list click) or getting from input
@@ -114,7 +114,7 @@ function updateUI(entry) {
     const exampleText = entry.meanings[0].definitions[0].example;
     example.innerText = exampleText ? exampleText : "";
 
-    // --- 3. NEW: SYNONYMS LOGIC ---
+    // 3. Synonyms
     // The API gives us an array like ["cheerful", "joyful"]
     const synonymsList = entry.meanings[0].synonyms;
 
@@ -126,7 +126,6 @@ function updateUI(entry) {
         // Hide the whole section if no synonyms found
         synonymsSection.classList.add("hidden");
     }
-    // -----------------------------
 
     // 4. Audio Check
     let audioSrc = null;
@@ -149,7 +148,7 @@ function updateUI(entry) {
     }
 }
 
-// SAVED LIST FUNCTIONS 
+// Saved list function
 
 function showSavedList() {
     resetUI(); // Hide everything else
