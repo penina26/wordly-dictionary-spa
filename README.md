@@ -1,10 +1,10 @@
 # Wordly - Modern Dictionary App (SPA)
 
-**Wordly** is a sleek, Single Page Application (SPA) dictionary tool built with vanilla HTML, CSS, and JavaScript. It features a modern dark/light mode interface, audio pronunciations, and a local storage system to save your favorite words. Below is a snapshot of what to expect.
+**Wordly** is a sleek, Single Page Application (SPA) dictionary tool built with vanilla HTML, CSS, and JavaScript. It features a modern light/dark mode interface, audio pronunciations,example usage and a local storage system to save your favorite words. Below is a snapshot of what to expect.
 
-![alt text](image.png) ![alt text](image-1.png)
-The light theme
-![alt text](image-2.png)
+![alt text](image-3.png) ![alt text](image-4.png)
+**The dark mode theme**
+![alt text](image-5.png)
 
 ## 🚀 Live Demo
 [Click here to view the project](https://penina26.github.io/wordly-dictionary-spa/)

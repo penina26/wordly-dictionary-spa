@@ -1,5 +1,19 @@
-/* 1. CSS VARIABLES (Default = Dark Mode) */
+/* 1. CSS VARIABLES (Default = Light) */
 :root {
+    --bg-main: #f0f2f5;
+    --bg-card: #ffffff;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --accent: #6c5ce7;
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --border-color: #ddd;
+
+    --saved-item-bg: rgba(0, 0, 0, 0.04);
+    --saved-item-bg-hover: rgba(0, 0, 0, 0.07);
+}
+
+/* 2. DARK THEME OVERRIDE (JS will toggle this class on Body) */
+.dark-theme {
     --bg-main: #121212;
     --bg-card: #1e1e1e;
     --text-primary: #ffffff;
@@ -12,28 +26,14 @@
     --saved-item-bg-hover: rgba(255, 255, 255, 0.10);
 }
 
-/* 2. LIGHT THEME OVERRIDES (JS will toggle this class on Body) */
-.light-theme {
-    --bg-main: #f0f2f5;
-    --bg-card: #ffffff;
-    --text-primary: #333333;
-    --text-secondary: #666666;
-    --accent: #6c5ce7;
-    /* Darker purple for light mode */
-    --nav-bg: rgba(255, 255, 255, 0.9);
-    --border-color: #ddd;
-
-    --saved-item-bg: rgba(0, 0, 0, 0.04);
-    --saved-item-bg-hover: rgba(0, 0, 0, 0.07);
-}
-
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-    transition: background-color 0.3s, color 0.3s;
     /* Smooth Theme Transition */
+    transition: background-color 0.3s, color 0.3s;
+
 
 }
 
@@ -183,10 +183,10 @@ body {
 
 /* SPECIFIC STYLE FOR SAVED HEART */
 .saved svg {
-    fill: #ff6b6b;
     /* Fill with red */
-    stroke: #ff6b6b;
+    fill: #ff6b6b;
     /* Red outline */
+    stroke: #ff6b6b;
 }
 
 /* Volume hidden by default */
@@ -232,12 +232,9 @@ body {
 #saved-list {
     list-style: none;
     max-height: 300px;
-    overflow-y: auto;
     /* Scroll if list is long */
-
-
+    overflow-y: auto;
 }
-
 
 .saved-item {
     background-color: var(--saved-item-bg);
