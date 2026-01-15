@@ -7,6 +7,9 @@
     --accent: #ae9cff;
     --nav-bg: rgba(18, 18, 18, 0.9);
     --border-color: #333;
+
+    --saved-item-bg: rgba(255, 255, 255, 0.05);
+    --saved-item-bg-hover: rgba(255, 255, 255, 0.10);
 }
 
 /* 2. LIGHT THEME OVERRIDES (JS will toggle this class on Body) */
@@ -19,6 +22,9 @@
     /* Darker purple for light mode */
     --nav-bg: rgba(255, 255, 255, 0.9);
     --border-color: #ddd;
+
+    --saved-item-bg: rgba(0, 0, 0, 0.04);
+    --saved-item-bg-hover: rgba(0, 0, 0, 0.07);
 }
 
 * {
@@ -228,10 +234,13 @@ body {
     max-height: 300px;
     overflow-y: auto;
     /* Scroll if list is long */
+
+
 }
 
+
 .saved-item {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--saved-item-bg);
     padding: 10px 15px;
     margin-bottom: 10px;
     border-radius: 8px;
@@ -245,7 +254,7 @@ body {
 
 .saved-item:hover {
     border-color: var(--accent);
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--saved-item-bg-hover);
 }
 
 .saved-word-text {

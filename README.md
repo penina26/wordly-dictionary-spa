@@ -2,7 +2,7 @@
 
 **Wordly** is a sleek, Single Page Application (SPA) dictionary tool built with vanilla HTML, CSS, and JavaScript. It features a modern dark/light mode interface, audio pronunciations, and a local storage system to save your favorite words. See a snapshot below of what to expect
 
-![alt text](image.png)
+![alt text](image.png) ![alt text](image-1.png)
 
 ## 🚀 Live Demo
 [Click here to view the project](https://penina26.github.io/wordly-dictionary-spa/)
@@ -17,7 +17,7 @@
 
 ### 🎨 Customization & UI
 * **Dark/Light Mode:** Toggle between a neon-dark theme and a clean light theme(toolitip included for instruction).
-* **Saved Words:** "Heart" a word to save it to your personal list (persists on refresh) (toolitip included for instruction).
+* **Saved Words:** Click the **heart** icon to save a word to your personal list (it stays saved even after refresh). From the saved list, click any word to instantly view its definition again *(tooltips included for guidance).*
 * **Responsive Design:** Fully responsive layout that works on mobile and desktop.
 * **Glassmorphism Navbar:** A sticky, modern navigation bar.
 

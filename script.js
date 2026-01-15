@@ -1,4 +1,4 @@
-// Selectors
+// SELECTORS
 const url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
 const inputWord = document.getElementById("inp-word");
@@ -25,11 +25,11 @@ const synonymsSection = document.getElementById("synonyms-section");
 const synonymsText = document.getElementById("synonyms-text");
 
 
-//  State management
+//  STATE MANAGEMENT
 // Load saved words from browser storage (or create empty list)
 let savedWords = JSON.parse(localStorage.getItem('mySavedWords')) || [];
 
-// Event Listeners
+// EVENT LISTENERS
 
 searchBtn.addEventListener("click", searchWord);
 inputWord.addEventListener("keydown", (e) => {
@@ -73,7 +73,7 @@ saveBtn.addEventListener("click", () => {
 });
 
 
-// Main functions
+// MAIN FUNCTIONS
 
 async function searchWord(query) {
     // Check if we passed a specific word (from list click) or getting from input
